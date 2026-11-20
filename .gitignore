@@ -1,0 +1,9 @@
+/.env
+/.env.*
+/.DS_Store
+/local/
+/workbench/local/
+/workbench/round-state.js
+/workbench/档案索引.js
+/workbench/本机记录.js*
+/workbench/每日灵感.js*

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151818">
+  <title>臻一 · 自媒体编辑台</title>
+  <link rel="stylesheet" href="./编辑台.css">
+  <script defer src="./round-state.js"></script>
+  <script defer src="./档案索引.js"></script>
+  <script defer src="./本机记录.js"></script>
+  <script defer src="./每日灵感.js"></script>
+  <script defer src="./编辑台.js"></script>
+</head>
+<body>
+  <a class="skip" href="#detail">跳至主要内容</a>
+  <header class="mast">
+    <div class="mast-inner">
+      <a class="brand" href="#home" aria-label="臻一自媒体编辑台首页">
+        <svg aria-hidden="true" viewBox="0 0 28 30" width="25" height="27" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 7.5 3 3v19l11 4.5 11-4.5V3L14 7.5Zm0 0v19M7 9l4 1.6m-4 3 4 1.6m6-4.6L21 9m-4 6.2 4-1.6"/></svg>
+        <strong>臻一</strong><span>自媒体编辑台</span>
+      </a>
+      <nav id="main-nav" aria-label="工作台导航">
+        <a id="nav-home" href="#home">首页<span class="tab-count number" aria-hidden="true"></span></a>
+        <a id="nav-ideas" href="#ideas">灵感池<span class="tab-count number" aria-hidden="true"></span></a>
+        <a id="nav-works" href="#FIRST-WORK/production">作品台<span class="tab-count number" aria-hidden="true"></span></a>
+        <a id="nav-monitor" href="#monitor">发布监测<span class="tab-count number" aria-hidden="true"></span></a>
+        <span class="nav-marker" id="nav-marker" aria-hidden="true" hidden></span>
+      </nav>
+      <span class="connection" id="connection">本地档案</span>
+    </div>
+  </header>
+  <main class="desk">
+    <p id="load-error" class="error" role="alert" hidden>没读到选题或档案索引。请从运营工作台目录重新打开此页。</p>
+    <noscript><p class="error">请开启浏览器脚本，再查看作品目录和核验记录。</p></noscript>
+    <aside id="works-library" class="library" aria-labelledby="library-title">
+      <details id="library-panel" open>
+        <summary><span id="library-title">作品目录</span><span id="library-total" class="number"></span></summary>
+        <div class="filters">
+          <label class="sr" for="query">搜索作品</label>
+          <input id="query" type="search" autocomplete="off" placeholder="搜标题、原题或编号">
+          <label class="sr" for="filter">作品状态</label>
+          <select id="filter">
+            <option value="all">全部作品</option>
+            <option value="active">正在制作</option>
+            <option value="archive">历史归档</option>
+            <option value="published">有发布记录</option>
+            <option value="unverified">至少一平台待核验</option>
+          </select>
+        </div>
+        <p class="sr" id="filter-result" role="status"></p>
+        <ul id="library-list" class="library-list" aria-label="作品"></ul>
+        <p id="library-empty" class="empty" hidden>没有匹配的作品。试试缩短关键词，或切回全部作品。</p>
+      </details>
+    </aside>
+    <section id="detail" class="canvas" tabindex="-1" aria-label="作品详情"></section>
+  </main>
+  <footer class="foot"><span>臻一人工智能实验室</span><span>本机制作 · 平台手动发布</span></footer>
+  <aside class="feedback" id="feedback" aria-label="操作反馈" hidden>
+    <p id="feedback-message" role="status"></p>
+    <div id="feedback-actions" class="controls"></div>
+  </aside>
+</body>
+</html>
