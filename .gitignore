@@ -1,8 +1,11 @@
 /.env
 /.env.*
-/.DS_Store
+.DS_Store
+/account.json
+/analytics/
 /local/
 /workbench/local/
+/workbench/平台交付/
 /workbench/round-state.js
 /workbench/档案索引.js
 /workbench/本机记录.js*

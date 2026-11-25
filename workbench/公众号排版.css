@@ -1,0 +1,44 @@
+:root {
+  color-scheme: dark;
+  --surface: #1a222d;
+  --line: #3c4a5c;
+  --text: #f3f1eb;
+  --muted: #b9c2cf;
+  --accent: #ebc38b;
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); color: var(--text); }
+main { padding: clamp(14px, 3vw, 28px); }
+h1, p { margin: 0; }
+button { font: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.format-header { display: flex; justify-content: space-between; align-items: start; gap: 12px 24px; flex-wrap: wrap; margin-bottom: 18px; }
+.format-header > div:first-child { min-width: 0; flex: 1 1 260px; }
+.format-header h1 { font-size: clamp(1.15rem, 3vw, 1.48rem); line-height: 1.4; overflow-wrap: anywhere; }
+.format-meta { margin-bottom: 3px; color: var(--accent); font-size: .78rem; }
+.format-header-actions { display: grid; justify-items: end; gap: 4px; }
+.format-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.format-button {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 6px;
+  background: #242f3c; color: var(--text); cursor: pointer; font-size: .88rem;
+  text-decoration: none;
+}
+.format-button:hover, .format-button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.format-primary, .format-primary:hover { background: var(--accent); border-color: var(--accent); color: #2c2217; font-weight: 650; }
+.format-button:disabled { opacity: .6; cursor: default; }
+.format-status { min-width: 0; color: var(--muted); font-size: .8rem; overflow-wrap: anywhere; }
+.format-state { padding-block: 8px; }
+.format-error { color: #f5b3a4; }
+.format-preview-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; }
+.format-device { display: flex; gap: 5px; }
+.format-preview { display: grid; justify-items: center; min-width: 0; padding: 9px; background: #121921; border: 1px solid var(--line); border-radius: 8px; }
+.format-article-frame { width: 100%; max-width: 800px; height: clamp(340px, 70vh, 720px); border: 0; border-radius: 4px; background: #fff; }
+.format-phone .format-article-frame { max-width: 390px; }
+@media (max-width: 700px) {
+  .format-header-actions { justify-items: start; }
+}
+@media (max-width: 420px) {
+  .format-actions { gap: 5px; }
+  .format-button { min-height: 43px; padding-inline: 8px; }
+}
